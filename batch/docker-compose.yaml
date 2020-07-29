@@ -1,0 +1,9 @@
+versoin: '3'
+services:
+  azml:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    port:
+      - "8000:8000"
+    device

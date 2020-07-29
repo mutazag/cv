@@ -105,7 +105,6 @@ ParallelRunStep(name, parallel_run_config, inputs, output=None, side_inputs=None
     ```
 - `outputs`: pipeline data that could be used for later steps, An object reference in the outputs array becomes available as an input for a subsequent pipeline step, for scenarios where there is more than one step.
 - `arguments`: command line argues that are passed to the entry script, these are parsed in the `init()` function. these areguments need to be passed into the pipeline from ADF - more on that later.
-
         ```python
         arguments=['--input_partition', '2020/08/07', '--kv_customimage', 'customimagesecret', '--kv_readapi', 'readapisecret']
         ```
