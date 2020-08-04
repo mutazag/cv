@@ -12,6 +12,7 @@
     - [2.4. Parallel Run Config and Step](#24-parallel-run-config-and-step)
     - [2.5. Calling AML Pipeline from ADF](#25-calling-aml-pipeline-from-adf)
         - [2.5.1. Parametrise the Pipeline](#251-parametrise-the-pipeline)
+        - [2.5.2. Parameterise Datasets](#252-parameterise-datasets)
     - [2.6. Workflow](#26-workflow)
 
 <!-- /TOC -->
@@ -133,6 +134,32 @@ When you first run a pipeline, Azure Machine Learning:
 * Use `PipelineParameter` to [create/retrieve a pipeline argument](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-your-first-pipeline#publish-a-pipeline).
 * Pipeline argument then can be used in pipeline steps, example python step arguments can now refer to pipeline argument string
 * ADF will feed in the pipeline parameters when calling the AML pipeline step
+* Pass a parameter values to a published pipeline using the `ParameterAssignment` argument
+* Dynamic datasets cannot be passed using `ParameterAssignment`, instead `DatasetDefinitionValueAssignments` must be used.
+
+
+To pass a parameter using `ParameterAssignment` in REST api call:
+
+```python
+
+response = requests.post(pipeline_endpoint,
+                         headers=auth_header,
+                         json={'ExperimentName': 'BatchScoringPipelineExp-datasetinput',
+                               'ParameterAssignments': {
+                                   'pipeline_inpart': 'partition1',
+                                    'pipeline_kv_customimg': '123',
+                                    'pipeline_kv_readapi': '342'}})
+```
+
+
+The same can be achieved in ADF when using the [Machine Learning Execute Pipeline](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-machine-learning-service) activity type
+
+![batch\adf_aml_pipeline_execute_params](batch/adf_aml_pipeline_execute_params.png)
+
+### 2.5.2. Parameterise Datasets
+
+`azureml` python sdk allows passing datasets as params
+Passing a dataset as paramater to a published pipeline as achieved through  using the `DatasetDefinitionValueAssignments` in REST api.
 
 ## 2.6. Workflow
 
