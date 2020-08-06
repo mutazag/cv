@@ -154,7 +154,7 @@ response = requests.post(pipeline_endpoint,
 
 The same can be achieved in ADF when using the [Machine Learning Execute Pipeline](https://docs.microsoft.com/en-us/azure/data-factory/transform-data-machine-learning-service) activity type
 
-![batch\adf_aml_pipeline_execute_params](batch/adf_aml_pipeline_execute_params.png)
+![adf_aml_pipeline_execute_params](adf_aml_pipeline_execute_params.png)
 
 ### 2.5.2. Parameterise Datasets
 
