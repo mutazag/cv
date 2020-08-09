@@ -37,9 +37,9 @@ def run(mini_batch):
     # process files
     for file_path in mini_batch:
         # process file in filepath
-        # ...
+        # processed_result = ProcesssImage(file_path, metadatadict)
         # append processing result to a result list
-        result_list.append(os.path.basename(file_path))
+        result_list.append(f'{os.path.basename(file_path)},auditid123,noimagefound,1,2,3,90.9')
 
     # returned result_list
     return result_list
