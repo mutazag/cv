@@ -163,4 +163,7 @@ Passing a dataset as paramater to a published pipeline as achieved through  usin
 
 ## 2.6. Workflow
 
+
+When updated to processing scripts are committed, CICD should rerun AML pipeline creation script to publish updated artefacts, get the new pipeline endpoint id and save it to configuration table.
+
 ![Impressions](https://PixelServer20190423114238.azurewebsites.net/api/impressions/MachineLearningNotebooks/how-to-use-azureml/README.png)
