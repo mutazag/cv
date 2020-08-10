@@ -21,11 +21,14 @@ def init():
     parser.add_argument('--input_partition', dest='input_partition', required=True)
     parser.add_argument('--kv_customimage', dest='kv_customimage', required=True)
     parser.add_argument('--kv_readapi', dest='kv_readapi')
+    parser.add_argument('--metadata_config', dest='metadata_config')
+    parser.add_argument('--metadata', dest='metadata')
     args, _ = parser.parse_known_args()
     print('input partition: ', args.input_partition)
     print('kv customimage: ', args.kv_customimage)
     print('kv readapi: ', args.kv_readapi)
-
+    print('metadatafile: ', args.metadata)
+    print('metadata_config: ', args.metadata_config)
 
 
 def run(mini_batch):
