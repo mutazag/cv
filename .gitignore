@@ -128,3 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 secrets.ini
+
+# Azure ML
+.azureml/
+batch/AML/
+

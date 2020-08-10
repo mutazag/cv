@@ -1,0 +1,8 @@
+2020-07-30T12:53:40.449445 Start the simulator.
+2020-07-30T12:53:41.296139 The overviewer on 10.0.0.4 started.
+2020-07-30T12:53:52.479394 There are 2 temp files to concatenate. Total size is 0.0002307891845703125 MB.
+2020-07-30T12:53:52.581786 Concatenated 1/2 files in 0:00:00.032855. Estimated remaining 0:00:00.016226.
+2020-07-30T12:53:52.702414 Finished concatenating 2 files in 0:00:00.228142.
+2020-07-30T12:53:55.216720 Start to generate the report.
+2020-07-30T12:53:55.525286 Saved the report to logs/sys/report/processed_tasks.csv.
+2020-07-30T12:53:56.861300 The simulator stopped.
