@@ -11,9 +11,10 @@
     - [2.3. Scoring script](#23-scoring-script)
     - [2.4. Parallel Run Config and Step](#24-parallel-run-config-and-step)
     - [2.5. Calling AML Pipeline from ADF](#25-calling-aml-pipeline-from-adf)
-        - [2.5.1. Parametrise the Pipeline](#251-parametrise-the-pipeline)
-        - [2.5.2. Parameterise Datasets](#252-parameterise-datasets)
-    - [2.6. Workflow](#26-workflow)
+    - [2.6. AML Pipeline with data inputs](#26-aml-pipeline-with-data-inputs)
+        - [2.6.1. Parametrise the Pipeline](#261-parametrise-the-pipeline)
+        - [2.6.2. Parameterise Datasets](#262-parameterise-datasets)
+    - [2.7. Workflow](#27-workflow)
 
 <!-- /TOC -->
 
@@ -127,9 +128,24 @@ When you first run a pipeline, Azure Machine Learning:
 
 ![pipeline_flow](https://docs.microsoft.com/en-us/azure/machine-learning/media/how-to-create-your-first-pipeline/run_an_experiment_as_a_pipeline.png)
 
+## 2.6. AML Pipeline with data inputs
+
+There are two types of data inputs that need to passed in to the AML pipeline, these data inputs will be represented y `PipelineParameter`
+
+1. the images to be processed
+2. metadata of images
 
 
-### 2.5.1. Parametrise the Pipeline
+Images are stored on a Blob store, in a data partitioned folder. before calling the AML pipeline, an AML dataset need to be create to point to the partitioned folder as a relative path. This file dataset is used as an input to the `ParallelRunStep`, setting up the input in this way allows AML to create minibatches based on this file dataset, and manage the distribution of work. Each task in the batch processing cluster will process one minibatch. This will be passed in as a paramater into the `Run()` method of the python entry script.
+
+Metadata of images is a csv file that should be referenceable and accessible from all nodes and tasks that run the python entry script.
+- A *registered* data set will be created in the AML workspace to point to the blob storage container/folder path that holds the metadata file.
+- *registered* data set is passed as in the `side_inputs` argument of the `ParallelRunStep`
+- The name of the file to be used by the pipeline step will be passed in as a argument paramater to the `ParallalRunStep`, the file name is set as a `PipelineParameter` allowing the invocation process, this case the ADF pipeline, to set the parameter file name at the time of kicking of the AML pipeline.
+- it is also a good practice to pass in the *registered* dataset object as an argument to the entry script, this gives the script the ability to determine the path of the dataset on the locally mounted volume
+
+
+### 2.6.1. Parametrise the Pipeline
 
 * Use `PipelineParameter` to [create/retrieve a pipeline argument](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-your-first-pipeline#publish-a-pipeline).
 * Pipeline argument then can be used in pipeline steps, example python step arguments can now refer to pipeline argument string
@@ -156,12 +172,12 @@ The same can be achieved in ADF when using the [Machine Learning Execute Pipelin
 
 ![adf_aml_pipeline_execute_params](adf_aml_pipeline_execute_params.png)
 
-### 2.5.2. Parameterise Datasets
+### 2.6.2. Parameterise Datasets
 
 `azureml` python sdk allows passing datasets as params
 Passing a dataset as paramater to a published pipeline as achieved through  using the `DatasetDefinitionValueAssignments` in REST api.
 
-## 2.6. Workflow
+## 2.7. Workflow
 
 
 When updated to processing scripts are committed, CICD should rerun AML pipeline creation script to publish updated artefacts, get the new pipeline endpoint id and save it to configuration table.

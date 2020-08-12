@@ -1,0 +1,61 @@
+pipeline_inpart = PipelineParameter(name="pipeline_inpart", default_value="2020/08/10")
+pipeline_metadata = PipelineParameter(name="pipeline_metadata", default_value="20200810_images.csv")
+pipeline_kv_customimg = PipelineParameter(name="pipeline_kv_customimg", default_value="api-custom-vision")
+pipeline_kv_readapi = PipelineParameter(name="pipeline_kv_readapi", default_value="api-readapi")
+pipeline_dataset_param = PipelineParameter(name="pipeline_dataset_id", default_value=input_images_dataset)
+
+
+
+@replace(
+replace(
+replace(
+'{"ExperimentName": "adf-rest-experiment",
+                               "ParameterAssignments": {
+                                   "pipeline_inpart": "{inPartition}",
+                                    "pipeline_kv_customimg": "123",
+                                    "pipeline_kv_readapi": "342",
+                                    "pipeline_metadata" : "{metadata_file_name}"},
+                                "DataPathAssignments": {
+                                   "pipeline_output_dataset_id": {
+                                       "DataStoreName": "godzilla",
+                                       "RelativePath": "output/{inPartition}"}},
+                                "DataSetDefinitionValueAssignments": {
+                                    "pipeline_dataset_id": {
+                                        "SavedDataSetReference": {"Id": "{saved_dataset_id}"}}}}', '{saved_dataset_id}', variables('aml_dataset_saved_id')),
+'{metadata_file_name}', variables('aml_dataset_metadata')),
+'{inPartition}', pipeline().parameters.adf_pipeline_parition
+)
+
+
+
+
+
+
+{'ExperimentName': 'BatchScoringPipelineExp-datasetinput',
+                               'ParameterAssignments': {
+                                   'pipeline_inpart': 'partition1',
+                                    'pipeline_kv_customimg': '123',
+                                    'pipeline_kv_readapi': '342'},
+                                'DataPathAssignments': {
+                                   'pipeline_output_dataset_id': {
+                                       'DataStoreName': 'godzilla',
+                                       'RelativePath': 'output/2020/10/10'}},
+                                'DataSetDefinitionValueAssignments': {
+                                    'pipeline_dataset_id': {
+                                        'SavedDataSetReference': {'Id': saved_dataset_id}}}}
+
+
+{"DatastoreName": "godzilla", "RelativePath": "{relativepath}"}
+
+
+@replace('{"DatastoreName": "godzilla", "RelativePath": "{relativepath}"}',
+'{relativepath}',
+concat('images/', pipeline().parameters.adf_pipeline_parition)
+)
+
+
+
+{"ExperimentName": "adf-rest-experiment", "RunSource": "SDK", "ParameterAssignments": {"pipeline_inpart": "2020/08/09", "pipeline_kv_customimg": "adf-pipeline-parametrised-checkstatust", "pipeline_kv_readapi":"readapi1" }}
+
+
+{"ExperimentName": "adf-rest-experiment", "RunSource": "SDK", "ParameterAssignments": {"pipeline_inpart": "2020/08/09", "pipeline_kv_customimg": "adf-pipeline-parametrised-checkstatust", "pipeline_kv_readapi":"readapi1" }}
