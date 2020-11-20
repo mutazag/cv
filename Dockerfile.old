@@ -1,0 +1,48 @@
+FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
+
+
+ENV OPENCV https://github.com/opencv/opencv/archive/3.4.2.tar.gz
+ENV OPENCV_VER 3.4.2
+ENV CC /usr/bin/clang
+ENV CXX /usr/bin/clang++
+
+# Prepare the environment and install essential python packages
+RUN apk add -U --no-cache --virtual=build-dependencies \
+    git linux-headers musl libxml2-dev libxslt-dev libffi-dev \
+    musl-dev libgcc openssl-dev jpeg-dev zlib-dev freetype-dev build-base \
+    lcms2-dev openjpeg-dev g++ make cmake clang clang-dev ninja curl \
+    gcc gfortran zlib \
+    && apk add --no-cache jpeg libjpeg freetype openjpeg \
+    openblas-dev tiff-dev boost-dev gtk+3.0-dev \
+    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
+    && pip install --no-cache-dir numpy scipy scikit-build
+
+
+# Install OpenCV for Python
+RUN mkdir /opt && cd /opt && \
+    curl -L $OPENCV | tar zx && \
+    cd opencv-$OPENCV_VER && \
+    mkdir build && cd build && \
+    cmake -G Ninja \
+          -D CMAKE_BUILD_TYPE=RELEASE \
+          -D CMAKE_INSTALL_PREFIX=/usr/local \
+          -D WITH_FFMPEG=NO \
+          -D WITH_IPP=NO \
+          -D PYTHON_EXECUTABLE=/usr/local/bin/python \
+          -D WITH_OPENEXR=NO .. && \
+    ninja && ninja install && \
+    ln -s /usr/local/lib/python3.6/site-packages/cv2.cpython-36m-x86_64-linux-gnu.so \
+          /usr/lib/python3.6/site-packages/cv2.so 
+
+
+# Install dlib for Python
+RUN mkdir /dlibpkg && cd /dlibpkg && \
+    git clone https://github.com/davisking/dlib.git && \
+	cd dlib/examples && mkdir build && cd build && cmake .. -DUSE_AVX_INSTRUCTIONS=ON && cmake --build . --config Release && \
+	cd ../.. && python setup.py install && \
+    apk del build-dependencies && \
+    rm -rf /var/cache/apk/* && \
+    cd / && \
+    rm -rf /opt && \
+    rm -rf /dlibpkg
+

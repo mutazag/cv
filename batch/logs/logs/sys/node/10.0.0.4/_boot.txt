@@ -1,4 +1,6 @@
-2020-07-30 12:53:23,900|INFO|sys.version:3.6.2 |Anaconda, Inc.| (default, Oct  5 2017, 07:59:26) 
+2020-08-10 11:34:15,487|INFO|sys.version:3.6.2 |Anaconda, Inc.| (default, Oct  5 2017, 07:59:26) 
 [GCC 7.2.0], sys.platform:linux.
-2020-07-30 12:53:37,781|INFO|Extracted /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/b18d7bb3-e883-458a-a76a-a5f4c2813da8/mounts/workspaceblobstore/azureml/b18d7bb3-e883-458a-a76a-a5f4c2813da8/driver/prs_prod.tar.gz to /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/b18d7bb3-e883-458a-a76a-a5f4c2813da8/wd/prs_prod in 12.917976 seconds.
-2020-07-30 12:53:57,059|INFO|Delete file /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/b18d7bb3-e883-458a-a76a-a5f4c2813da8/mounts/workspaceblobstore/azureml/b18d7bb3-e883-458a-a76a-a5f4c2813da8/driver/prs_prod.tar.gz.
+2020-08-10 11:34:20,230|INFO|Start to import /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/minibatch_process.py by file path.
+2020-08-10 11:34:20,446|INFO|Imported /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/minibatch_process.py by file path.
+2020-08-10 11:34:31,026|INFO|Extracted /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/driver/prs_prod.tar.gz to /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/wd/prs_prod in 10.579028 seconds.
+2020-08-10 11:35:03,408|INFO|Delete file /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/driver/prs_prod.tar.gz.

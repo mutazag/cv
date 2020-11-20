@@ -1,1 +1,0 @@
-The progress monitor: ['All 8 mini batches have been processed.']
