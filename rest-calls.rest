@@ -1,0 +1,38 @@
+# my variables
+@token = c420d4775b5c4c5a81dc06c639f896d7
+@url1 = "https://cdn.concreteplayground.com/content/uploads/2018/02/taxi-nsw-sydney-flickr-jason-thien.jpeg"
+
+
+POST https://readycog.cognitiveservices.azure.com/customvision/v3.0/Prediction/2c4e0486-88ee-4369-b033-dd24e1e07885/detect/iterations/Iteration1/url
+Content-Type: application/json
+Prediction-Key: {{token}}
+
+{
+    "url": {{url1}}
+}
+
+###
+
+POST https://readycog.cognitiveservices.azure.com/customvision/v3.0/Prediction/2c4e0486-88ee-4369-b033-dd24e1e07885/detect/iterations/Iteration1/image
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Prediction-Key: c420d4775b5c4c5a81dc06c639f896d7
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="C:\Users\mutaz\Downloads\t8.jpg"
+Content-Type: application/octet-stream
+
+< "C:\Users\mutaz\Downloads\t8.jpg"
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+###
+
+curl --request POST --url https://readycog.cognitiveservices.azure.com/customvision/v3.0/Prediction/2c4e0486-88ee-4369-b033-dd24e1e07885/detect/iterations/Iteration1/url --header 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' --header 'prediction-key: c420d4775b5c4c5a81dc06c639f896d7' --data-binary '------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="C:\Users\mutaz\Downloads\t8.jpg"
+Content-Type: image/jpg
+
+< "C:\Users\mutaz\Downloads\t8.jpg"
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+'
