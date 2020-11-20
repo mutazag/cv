@@ -133,3 +133,6 @@ secrets.ini
 .azureml/
 batch/AML/
 
+.gdn/
+batch/logs/
+audit_images/
