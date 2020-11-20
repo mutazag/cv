@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Python\\Python383\\python.exe",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "powershell.codeFormatting.addWhitespaceAroundPipe": true
+}

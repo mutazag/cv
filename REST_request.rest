@@ -1,0 +1,9 @@
+@url = https://readycog.cognitiveservices.azure.com/customvision/v3.0/Prediction/2c4e0486-88ee-4369-b033-dd24e1e07885/detect/iterations/Iteration2/image
+@prediction_key = c420d4775b5c4c5a81dc06c639f896d7
+
+###
+POST {{url}} HTTP/1.1
+Content-Type: application/octet-stream
+Prediction-Key: {{prediction_key}}
+
+< anpr_samples\bike.jpg
