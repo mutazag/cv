@@ -1,0 +1,6 @@
+2020-07-30 12:53:46,608|INFO|348|Increase the process's niceness to 10.
+2020-07-30 12:53:46,622|INFO|348|No GPU available.
+2020-07-30 12:53:50,704|INFO|348|The processor type is FileDatasetProcessor.
+2020-07-30 12:53:52,602|INFO|348|Stop for got empty task list.
+2020-07-30 12:53:52,699|INFO|348|The agent exit with code 0.
+2020-07-30 12:53:52,703|INFO|348|Exit with 0

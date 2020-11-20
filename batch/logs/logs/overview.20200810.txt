@@ -1,0 +1,11 @@
+2020-08-10T11:34:34.486455 Start the simulator.
+2020-08-10T11:34:35.604495 The overviewer on 10.0.0.4 started.
+2020-08-10T11:34:55.783876 Scheduling finished. Scheduled 4 mini batches in 21 seconds.
+2020-08-10T11:34:55.885139 All 4 mini batches have been processed in 0:00:21.
+2020-08-10T11:34:56.107625 The overviewer on 10.0.0.4 stopped.
+2020-08-10T11:34:58.376141 There are 2 temp files to concatenate. Total size is 0.0004138946533203125 MB.
+2020-08-10T11:34:58.393311 Concatenated 1/2 files in 0:00:00.016848. Estimated remaining 0:00:00.042125.
+2020-08-10T11:34:58.484482 Finished concatenating 2 files in 0:00:00.113328.
+2020-08-10T11:35:01.639136 Start to generate the report.
+2020-08-10T11:35:01.862354 Saved the report to logs/sys/report/processed_tasks.csv.
+2020-08-10T11:35:03.238003 The simulator stopped.
