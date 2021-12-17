@@ -1,0 +1,5 @@
+{
+    "subscription_id": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxx",
+    "resource_group": "aml",
+    "workspace_name": "magaml"
+}
