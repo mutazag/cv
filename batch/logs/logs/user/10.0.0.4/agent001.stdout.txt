@@ -1,0 +1,10 @@
+init goes here
+parsing arguments
+input partition:  partition1
+kv customimage:  123
+kv readapi:  342
+metadatafile:  20200810_images.csv
+metadata_config:  /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/godzilla/metadata
+length of mini batch:  2
+length of mini batch:  2
+length of mini batch:  1

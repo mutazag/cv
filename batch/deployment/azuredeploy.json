@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaces_magaml_name": {
+            "defaultValue": "magaml",
+            "type": "String"
+        },
+        "storageaccounts_magaml1375920863_externalid": {
+            "defaultValue": "/subscriptions/907c8efc-c2c8-4c49-a4e1-aeb880e10c88/resourceGroups/aml/providers/microsoft.storage/storageaccounts/magaml1375920863",
+            "type": "String"
+        },
+        "registries_magamlc20472e5_externalid": {
+            "defaultValue": "/subscriptions/907c8efc-c2c8-4c49-a4e1-aeb880e10c88/resourceGroups/aml/providers/Microsoft.ContainerRegistry/registries/magamlc20472e5",
+            "type": "String"
+        },
+        "vaults_magaml7371006406_externalid": {
+            "defaultValue": "/subscriptions/907c8efc-c2c8-4c49-a4e1-aeb880e10c88/resourceGroups/aml/providers/microsoft.keyvault/vaults/magaml7371006406",
+            "type": "String"
+        },
+        "components_magaml2286079799_externalid": {
+            "defaultValue": "/subscriptions/907c8efc-c2c8-4c49-a4e1-aeb880e10c88/resourceGroups/aml/providers/microsoft.insights/components/magaml2286079799",
+            "type": "String"
+        }
+    },
+    "variables": {
+        "variable1": "[concat(param)]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.MachineLearningServices/workspaces",
+            "apiVersion": "2020-04-01",
+            "name": "[parameters('workspaces_magaml_name')]",
+            "location": "australiaeast",
+            "sku": {
+                "name": "Enterprise",
+                "tier": "Enterprise"
+            },
+            "identity": {
+                "principalId": "dc34c705-10b0-4592-802f-491254845689",
+                "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "s2": "[resourceId('Microsoft.MachineLearningServices/workspaces')]",
+                "storageAccount": "[parameters('storageaccounts_magaml1375920863_externalid')]",
+                "containerRegistry": "[parameters('registries_magamlc20472e5_externalid')]",
+                "keyVault": "[parameters('vaults_magaml7371006406_externalid')]",
+                "applicationInsights": "[parameters('components_magaml2286079799_externalid')]",
+                "hbiWorkspace": false,
+                "allowPublicAccessWhenBehindVnet": false,
+                "discoveryUrl": "https://australiaeast.experiments.azureml.net/discovery"
+            }
+        },
+        {
+            "type": "Microsoft.MachineLearningServices/workspaces/computes",
+            "apiVersion": "2020-04-01",
+            "name": "[concat(parameters('workspaces_magaml_name'), '/aml-compute1')]",
+            "location": "australiaeast",
+            "dependsOn": [
+                "[resourceId('Microsoft.MachineLearningServices/workspaces', parameters('workspaces_magaml_name'))]"
+            ],
+            "properties": {
+                "computeType": "AmlCompute",
+                "computeLocation": "australiaeast",
+                "properties": {
+                    "vmSize": "STANDARD_DS3_V2",
+                    "vmPriority": "Dedicated",
+                    "scaleSettings": {
+                        "maxNodeCount": 4,
+                        "minNodeCount": 0,
+                        "nodeIdleTimeBeforeScaleDown": "PT2M"
+                    },
+                    "remoteLoginPortPublicAccess": "Enabled"
+                }
+            }
+        }
+    ]
+}

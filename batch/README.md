@@ -4,17 +4,18 @@
 <!-- TOC -->
 
 - [1. batch processing using AZ Machine Learning](#1-batch-processing-using-az-machine-learning)
-    - [1.1. References](#11-references)
+  - [1.1. References](#11-references)
+  - [1.2. Configuration and Secrets](#12-configuration-and-secrets)
 - [2. Code Structure](#2-code-structure)
-    - [2.1. Authenticate to AML](#21-authenticate-to-aml)
-    - [2.2. Create AML Artefacts](#22-create-aml-artefacts)
-    - [2.3. Scoring script](#23-scoring-script)
-    - [2.4. Parallel Run Config and Step](#24-parallel-run-config-and-step)
-    - [2.5. Calling AML Pipeline from ADF](#25-calling-aml-pipeline-from-adf)
-    - [2.6. AML Pipeline with data inputs](#26-aml-pipeline-with-data-inputs)
-        - [2.6.1. Parametrise the Pipeline](#261-parametrise-the-pipeline)
-        - [2.6.2. Parameterise Datasets](#262-parameterise-datasets)
-    - [2.7. Workflow](#27-workflow)
+  - [2.1. Authenticate to AML](#21-authenticate-to-aml)
+  - [2.2. Create AML Artefacts](#22-create-aml-artefacts)
+  - [2.3. Scoring script](#23-scoring-script)
+  - [2.4. Parallel Run Config and Step](#24-parallel-run-config-and-step)
+  - [2.5. Calling AML Pipeline from ADF](#25-calling-aml-pipeline-from-adf)
+  - [2.6. AML Pipeline with data inputs](#26-aml-pipeline-with-data-inputs)
+    - [2.6.1. Parametrise the Pipeline](#261-parametrise-the-pipeline)
+    - [2.6.2. Parameterise Datasets](#262-parameterise-datasets)
+  - [2.7. Workflow](#27-workflow)
 
 <!-- /TOC -->
 
@@ -26,6 +27,14 @@
 * [Parallel Run Config](https://docs.microsoft.com/en-us/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig?view=azure-ml-py)
 
 
+## 1.2. Configuration and Secrets
+
+-  `.azureml/secrets.json`: strings and values for interacting with Azure Machine Learning project
+-  `.azureml/config.json`: workspace paramaters
+-  `.azureml/guid_trigger.json`: triggering the pipeline
+
+
+samples of the above files are placed in the `dot_azureml` folder in the root of the project.
 
 # 2. Code Structure
 

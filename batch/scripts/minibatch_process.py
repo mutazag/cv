@@ -1,6 +1,7 @@
 import os
 import argparse
 import pandas as pd
+from anpr import helpers1
 
 # import datetime
 # import time
@@ -64,10 +65,17 @@ def run(mini_batch):
 
     # process files
     for file_path in mini_batch:
+
+        #prepared_ocr_results, npr_results = run_NPR(file_path, metadata)
+        # result = formatOutput(prepared_ocr_results, npr_results)
+        # result_list.append(result)
+
+
         # process file in filepath
         # processed_result = ProcesssImage(file_path, metadatadict)
         # append processing result to a result list
         result_list.append(f'{os.path.basename(file_path)},auditid123,noimagefound,1,2,3,90.9')
-
+        # call an inference function( dict(filename, metadata for the file))
+        # add some logging
     # returned result_list
     return result_list
