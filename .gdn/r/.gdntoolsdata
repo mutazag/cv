@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "credscan",
+          "fullName": "Credential Scanner",
+          "rules": [
+            {
+              "id": "CSCAN-GENERAL0060",
+              "shortDescription": {
+                "text": "Found General Password."
+              }
+            }
+          ]
+        }
+      },
+      "versionControlProvenance": [
+        {
+          "repositoryUri": "https://github.com/mutazag/cv.git",
+          "revisionId": "e53b5b14c363339318d3b1e2768bd2e7ca476f3c",
+          "branch": "feature/batch_processing",
+          "mappedTo": {
+            "uri": "file:///c:/git/cv/"
+          }
+        }
+      ],
+      "originalUriBaseIds": {
+        "file:///c:/git/cv/": {
+          "uri": "file:///c:/git/cv/"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/git/cv/batch/98_authenticate.ipynb"
+          }
+        }
+      ],
+      "results": [],
+      
+      "columnKind": "utf16CodeUnits",
+      "properties": {
+        "toolInfoId": "credscan>>0>>202011201123"
+      }
+    }
+  ]
+}

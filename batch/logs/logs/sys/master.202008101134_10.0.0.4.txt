@@ -1,0 +1,62 @@
+2020-08-10 11:34:37,481|INFO|340|139988564350720|Master - Starting
+2020-08-10 11:34:37,497|INFO|340|139988564350720|The master role process starts.
+2020-08-10 11:34:37,544|INFO|340|139988564350720|create_resources() start.
+2020-08-10 11:34:37,703|INFO|340|139988125599488|Create table 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003proc' result: True
+2020-08-10 11:34:37,705|INFO|340|139988117206784|Create table 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003job' result: True
+2020-08-10 11:34:37,706|INFO|340|139988150777600|Create table 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003sum' result: True
+2020-08-10 11:34:37,716|INFO|340|139988133992192|Create table 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003init' result: True
+2020-08-10 11:34:37,719|INFO|340|139988142384896|Create table 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003run' result: True
+2020-08-10 11:34:37,788|INFO|340|139988142384896|Create queue 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003'.
+2020-08-10 11:34:38,015|INFO|340|139988564350720|create_resources() end.
+2020-08-10 11:34:38,015|INFO|340|139988564350720|Job telemetry initialized.
+2020-08-10 11:34:38,018|INFO|340|139988564350720|10.0.0.4: setting job stage to SCHEDULING, reason: Resources created. Start scheduling.
+2020-08-10 11:34:38,018|INFO|340|139988564350720|10.0.0.4: setting job stage to SCHEDULING.
+2020-08-10 11:34:38,187|INFO|340|139988564350720|future_create_tasks created.
+2020-08-10 11:34:38,187|INFO|340|139988564350720|Start scheduling.
+2020-08-10 11:34:38,190|INFO|340|139988564350720|The task provider type is FileDatasetProvider.
+2020-08-10 11:34:38,250|INFO|340|139988564350720|Input folders ['/mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/b8e8a8ce-d5b8-47bc-a9b4-d412f942b9dd'], from index 0.
+2020-08-10 11:34:38,250|INFO|340|139988564350720|Scheduling tasks for input 0: /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/b8e8a8ce-d5b8-47bc-a9b4-d412f942b9dd.
+2020-08-10 11:34:46,097|INFO|340|139988564350720|Save checkpoint for folder 0, offset 0, task_id 0, total_items 2, finished=False.
+2020-08-10 11:34:46,181|INFO|340|139988564350720|Save checkpoint for folder None, offset None, task_id 3, total_items 7, finished=True.
+2020-08-10 11:34:46,436|INFO|340|139988564350720|10.0.0.4: setting job stage to FIRST_TASK_SCHEDULED, reason: The first task created at 2020-08-10 11:34:46.433858.
+2020-08-10 11:34:46,437|INFO|340|139988564350720|10.0.0.4: setting job stage to FIRST_TASK_SCHEDULED.
+2020-08-10 11:34:46,678|INFO|340|139988564350720|Scheduled task {"id": 1, "minibatch": ["20160924_063342621_iOS.jpg", "20160924_063825264_iOS.jpg"], "location": ".", "dataset_name": "dataset_param_config", "dataset_pos": 0}.
+2020-08-10 11:34:46,679|INFO|340|139988564350720|Scheduled task {"id": 0, "minibatch": ["20160924_063249081_iOS.jpg", "20160924_063332113_iOS.jpg"], "location": ".", "dataset_name": "dataset_param_config", "dataset_pos": 0}.
+2020-08-10 11:34:46,680|INFO|340|139988564350720|Scheduled task {"id": 2, "minibatch": ["20160924_064218462_iOS.jpg", "20160924_064241679_iOS.jpg"], "location": ".", "dataset_name": "dataset_param_config", "dataset_pos": 0}.
+2020-08-10 11:34:46,681|INFO|340|139988564350720|Scheduled task {"id": 3, "minibatch": ["20160924_064251486_iOS.jpg"], "location": ".", "dataset_name": "dataset_param_config", "dataset_pos": 0}.
+2020-08-10 11:34:46,681|INFO|340|139988564350720|Scheduled 4 tasks.
+2020-08-10 11:34:47,251|INFO|340|139988564350720|wait_for_input_init returned.
+2020-08-10 11:34:47,282|INFO|340|139988564350720|storage_cleaner start.
+2020-08-10 11:34:47,283|INFO|340|139988564350720|Start thread to cleanup leaked queues and tables.
+2020-08-10 11:34:47,463|INFO|340|139988564350720|The thread cleanup leaked queues and tables ends.
+2020-08-10 11:34:47,499|INFO|340|139988117206784|All queues in the storage account: ['prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003']
+2020-08-10 11:34:47,499|INFO|340|139988117206784|current_queue: prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003, other_prs_queues: [],  non_prs_queues: [].
+2020-08-10 11:34:47,500|INFO|340|139988117206784|current_queue: prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003, other_prs_queues: [].
+2020-08-10 11:34:47,584|INFO|340|139988117206784|All tables in the storage account: ['prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003init', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003job', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003proc', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003run', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003sum']
+2020-08-10 11:34:47,585|INFO|340|139988117206784|current_tables: ['prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003sum', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003proc', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003run', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003job', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003init'], other_prs_tables: [],  non_prs_tables: [].
+2020-08-10 11:34:47,585|INFO|340|139988117206784|current_tables: ['prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003sum', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003proc', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003run', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003job', 'prs816e26aaxaf3bx4c0fxaf83xe3a2e2b2e003init'], other_prs_tables: [].
+2020-08-10 11:34:47,632|INFO|340|139988117206784|Consider a queue or table as leaked if it matches PRS naming pattern and is mapped to a terminal run.
+2020-08-10 11:34:47,632|INFO|340|139988117206784|Leaked queues: [], deleted queues: [], failed queues: [],Leaked tables: [], deleted tables: [], failed tables: [], terminal run: [].
+2020-08-10 11:34:47,700|INFO|340|139988564350720|storage_cleaner started.
+2020-08-10 11:34:47,700|INFO|340|139988564350720|await future_create_tasks.
+2020-08-10 11:34:47,700|INFO|340|139988564350720|await future_create_tasks returned.
+2020-08-10 11:34:47,707|INFO|340|139988117206784|Leaked storage cleanup finished. No leaked storage found.
+2020-08-10 11:34:47,849|INFO|340|139988564350720|Master - Task queue job completed: Scheduled 4 mini batches with 7 items. First task creation time: 9.199871092998364, total queue time: 9.724441051483154.
+2020-08-10 11:34:47,866|INFO|340|139988564350720|10.0.0.4: setting job stage to ALL_TASK_SCHEDULED, reason: on_all_tasks_created called.
+2020-08-10 11:34:47,866|INFO|340|139988564350720|10.0.0.4: setting job stage to ALL_TASK_SCHEDULED.
+2020-08-10 11:34:47,981|INFO|340|139988564350720|await progress_monitor.poll.
+2020-08-10 11:34:58,114|INFO|340|139988564350720|Polled 1 times.
+2020-08-10 11:34:58,150|INFO|340|139988564350720|Progress update stopped for reasons: ['All 4 mini batches have been processed.'].
+2020-08-10 11:34:58,169|INFO|340|139988564350720|10.0.0.4: setting job stage to ALL_TASK_CONSUMED, reason: The progress monitor: ['All 4 mini batches have been processed.']
+2020-08-10 11:34:58,169|INFO|340|139988564350720|10.0.0.4: setting job stage to ALL_TASK_CONSUMED.
+2020-08-10 11:34:58,287|INFO|340|139988564350720|await progress_monitor.poll returned.
+2020-08-10 11:34:58,287|INFO|340|139988564350720|Check the process result of all mini batches.
+2020-08-10 11:34:58,354|INFO|340|139988564350720|There are 4 mini batches with 7 items. Processed 4 mini batches containing 7 items, 7 succeeded, 0 failed. The error threshold is 1. 
+2020-08-10 11:34:58,354|INFO|340|139988564350720|The ParallelRunStep processed all mini batches. There are 4 mini batches with 7 items. Processed 4 mini batches containing 7 items, 7 succeeded, 0 failed. The error threshold is 1. 
+2020-08-10 11:34:58,369|INFO|340|139988564350720|Start concatenating.
+2020-08-10 11:34:58,376|INFO|340|139988564350720|There are 2 temp files to concatenate. Total size is 0.0004138946533203125 MB.
+2020-08-10 11:34:58,393|INFO|340|139988564350720|Concatenated 1/2 files in 0:00:00.016848. Estimated remaining 0:00:00.042125.
+2020-08-10 11:34:58,484|INFO|340|139988564350720|Finished concatenating 2 files in 0:00:00.113328.
+2020-08-10 11:34:58,696|INFO|340|139988564350720|10.0.0.4: setting job stage to FINISHED, reason: The master role finished.
+2020-08-10 11:34:58,696|INFO|340|139988564350720|10.0.0.4: setting job stage to FINISHED.
+2020-08-10 11:34:58,811|INFO|340|139988564350720|The master role process ends.

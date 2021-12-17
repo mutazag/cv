@@ -1,8 +1,6 @@
-2020-08-10 11:34:39,724|INFO|351|Increase the process's niceness to 10.
-2020-08-10 11:34:39,737|INFO|351|No GPU available.
-2020-08-10 11:34:39,753|INFO|351|Start to import /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/minibatch_process.py by file path.
-2020-08-10 11:34:47,123|INFO|351|Imported /mnt/batch/tasks/shared/LS_root/jobs/magaml/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/mounts/workspaceblobstore/azureml/816e26aa-af3b-4c0f-af83-e3a2e2b2e003/minibatch_process.py by file path.
-2020-08-10 11:34:47,422|INFO|351|The processor type is FileDatasetProcessor.
-2020-08-10 11:34:56,261|INFO|351|Stop for got empty task list.
-2020-08-10 11:34:56,746|INFO|351|The agent exit with code 0.
-2020-08-10 11:34:56,748|INFO|351|Exit with 0
+2020-07-30 12:53:46,608|INFO|348|Increase the process's niceness to 10.
+2020-07-30 12:53:46,622|INFO|348|No GPU available.
+2020-07-30 12:53:50,704|INFO|348|The processor type is FileDatasetProcessor.
+2020-07-30 12:53:52,602|INFO|348|Stop for got empty task list.
+2020-07-30 12:53:52,699|INFO|348|The agent exit with code 0.
+2020-07-30 12:53:52,703|INFO|348|Exit with 0

@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "snapshots": {
+    "history.run.202011201123": {
+      "name": "history.run.202011201123",
+      "createdDate": "2020-11-20 00:24:30Z",
+      "lastUpdatedDate": "2020-11-20 00:24:30Z"
+    }
+  },
+  "results": {
+    "92e091f98f85e80d4c1151b567cf790429e66f9e1bfa79526715b56b74bdc70b": {
+      "signature": "92e091f98f85e80d4c1151b567cf790429e66f9e1bfa79526715b56b74bdc70b",
+      "target": "batch/98_authenticate.ipynb",
+      "memberOf": [
+        "history.run.202011201123"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "justification": null,
+      "createdDate": "2020-11-20 00:24:30Z",
+      "expirationDate": null,
+      "type": null
+    }
+  }
+}

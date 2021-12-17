@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "locationUri": "batch/98_authenticate.ipynb",
+  "originalUriBaseIds": {
+    "file:///c:/git/cv/": {
+      "uri": "file:///c:/git/cv/"
+    }
+  },
+  "results": [
+    {
+      "signature": "92e091f98f85e80d4c1151b567cf790429e66f9e1bfa79526715b56b74bdc70b",
+      "toolInfoId": "credscan>>0>>202011201123",
+      "ruleId": "CSCAN-GENERAL0060",
+      "level": "error",
+      "message": {
+        "text": "{{Searcher}}CSCAN-GENERAL0060\n{{Code}}See 98_authenticate.ipynb line 42 for the code resulting in match\n{{Info}}Found General Password.\n{{Suggest}}Validate file contains secrets, remove, roll credential, and use approved store. For additional information on secret remediation see https://aka.ms/credscan "
+      },
+      "locations": [
+        {
+          "physicalLocation": {
+            "artifactLocation": {
+              "uri": "batch/98_authenticate.ipynb",
+              "uriBaseId": "file:///c:/git/cv/"
+            },
+            "region": {
+              "startLine": 42,
+              "startColumn": 1
+            }
+          },
+          "logicalLocations": [
+            {}
+          ]
+        }
+      ],
+      "properties": {
+        "rank": "1"
+      }
+    }
+  ]
+}
